@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(131, 245, 207);
+
+}
+.wrapper{
+    width: 80%;
+    height: 100%;
+    padding: 2%;
+    background: #fff;
+    border-radius: 10px;
+
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content .input-area{
+    z-index: -999;
+    opacity: 0;
+    position: absolute;
+}
+.content .test-data{
+    width: 75%;
+    padding: 13px 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 68vh;
+    overflow-y: auto;
+    box-shadow: 5px 5px 5px 5px rgb(0.5,0.5,0.5,.5);
+
+}
+
+.test-data::-webkit-scrollbar{
+    width: 0;
+}
+.test-data p{
+    font-size: 21px;
+    text-align: justify;
+    letter-spacing: 1px;
+    /* word-break: break-all; */
+}
+.test-data p span{
+    position: relative;
+}
+.test-data p span.correct{
+    color: green;
+}
+.test-data p span.incorrect{
+    color: red;
+    background: #ccc;
+    outline: 1px solid #fff;
+    border-radius: 4px;
+}
+.test-data p span.active{
+    color: #17a2b8;
+}
+.test-data p span.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    opacity: 0;
+    background: #17a2b8;
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink {
+    50%{
+        opacity: 1;
+    }
+}
+.content .test-area{
+
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 13px 20px ;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 68vh;
+    margin-left: 20px;
+    box-shadow: 5px 5px 5px 5px rgb(0.5,0.5,0.5,.5);
+    
+}
+.test-area .result-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%
+
+}
+.result-details li{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 18px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 5px 5px 5px 5px rgb(0.5,0.5,0.5,.5);
+}
+.result-details li span{
+    font-size: 20px;
+    text-align: center;
+}
+.result-details li span.finished {
+    font-size: 20px;
+    text-align: center;
+    color: red;
+}
+.result-details .mistakes .finished {
+    font-size: 20px;
+    text-align: center;
+    color: red;
+}
+.result-details li P  {
+    /* font-size: 20px; */
+
+    /* text-align: center; */
+    color: green;
+    font-weight: bold;
+
+}
+.test-area button{
+    background :rgb(127, 240, 35);
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    box-shadow: 2px 5px 5px 2px rgb(0,0,0,.5);
+    transition:transform 0.3s ease;
+}
+.test-area button:hover{
+    cursor: pointer;
+    background: gray;
+
+}
